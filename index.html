@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BigPipe Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #ecf0f1; /* Background color for the entire page */
+        }
+
+        #header, #content, #footer {
+            width: 80%; /* Adjust the width as needed */
+            margin: 20px;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        #header {
+            background-color: #3498db; /* Header background color */
+            color: #fff; /* Header text color */
+        }
+
+        #content {
+            background-color: #2ecc71; /* Content background color */
+            color: #fff; /* Content text color */
+        }
+
+        #footer {
+            background-color: #e74c3c; /* Footer background color */
+            color: #fff; /* Footer text color */
+        }
+
+        .pagelet {
+            display: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header" class="pagelet">
+        <h1>Welcome to My Website</h1>
+        <img src="https://via.placeholder.com/300" alt="Header Image">
+    </div>
+
+    <div id="content" class="pagelet">
+        <p>This is the main content of the page.</p>
+        <img src="https://via.placeholder.com/300" alt="Content Image">
+    </div>
+
+    <div id="footer" class="pagelet">
+        <p>&copy; 2023 My Website. All rights reserved.</p>
+        <img src="https://via.placeholder.com/300" alt="Footer Image">
+    </div>
+
+    <script>
+        function fetchAndRenderPagelet(pageletId, content) {
+            setTimeout(() => {
+                const pagelet = document.getElementById(pageletId);
+                pagelet.innerHTML = content;
+                pagelet.style.display = 'block';
+            }, Math.random() * 2000);
+        }
+
+        // Simulate asynchronous requests to fetch and render pagelets
+        fetchAndRenderPagelet('header', '<h1>Welcome to My Website</h1><img src="https://via.placeholder.com/300" alt="Header Image">');
+        fetchAndRenderPagelet('content', '<p>This is the main content of the page.</p><img src="https://via.placeholder.com/300" alt="Content Image">');
+        fetchAndRenderPagelet('footer', '<p>&copy; 2023 My Website. All rights reserved.</p><img src="https://via.placeholder.com/300" alt="Footer Image">');
+    </script>
+</body>
+</html>
